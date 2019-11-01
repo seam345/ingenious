@@ -7,32 +7,10 @@
 
 using namespace std;
 
-enum class shape {
-	red12pointedStar = 1,
-	greenCircle = 2,
-	blue6PointedStar = 3,
-	orangeHexagon = 4,
-	yellow24PointedStar = 5,
-	purpleRing = 6
-};
-
-const int red12pointedStar = 1;
-const int greenCircle = 2;
-const int blue6PointedStar = 3;
-const int orangeHexagon = 4;
-const int yellow24PointedStar = 5;
-const int purpleRing = 6;
-
-const int r = red12pointedStar;
-const int g = greenCircle;
-const int b = blue6PointedStar;
-const int o = orangeHexagon;
-const int y = yellow24PointedStar;
-const int p = purpleRing;
 
 
 
-board::board(const int& players, bool test)
+board::board(const int &players, bool test)
 {
     if (test)
     {
@@ -46,7 +24,7 @@ board::board(const int& players, bool test)
                 {140},
                 {150},
         };
-        ring2={
+        ring2 = {
                 {200, 201},
                 {210, 211},
                 {220, 221},
@@ -54,7 +32,7 @@ board::board(const int& players, bool test)
                 {240, 241},
                 {250, 251},
         };
-        ring3={
+        ring3 = {
                 {300, 301, 302},
                 {310, 311, 312},
                 {320, 321, 322},
@@ -62,7 +40,7 @@ board::board(const int& players, bool test)
                 {340, 341, 342},
                 {350, 351, 352},
         };
-        ring4={
+        ring4 = {
                 {400, 401, 402, 403},
                 {410, 411, 412, 413},
                 {420, 421, 422, 423},
@@ -70,7 +48,7 @@ board::board(const int& players, bool test)
                 {440, 441, 442, 443},
                 {450, 451, 452, 453},
         };
-        ring5={
+        ring5 = {
                 {500, 501, 502, 503, 504},//p
                 {510, 511, 512, 513, 514},//r
                 {520, 521, 522, 523, 524},//g
@@ -78,7 +56,7 @@ board::board(const int& players, bool test)
                 {540, 541, 542, 543, 544},//o
                 {550, 551, 552, 553, 554},//y
         };
-        ring6={
+        ring6 = {
                 {600, 601, 602, 603, 604, 605},
                 {610, 611, 612, 613, 614, 615},
                 {620, 621, 622, 623, 624, 625},
@@ -86,7 +64,7 @@ board::board(const int& players, bool test)
                 {640, 641, 642, 643, 644, 645},
                 {650, 651, 652, 653, 654, 655},
         };
-        ring7={
+        ring7 = {
                 {700, 701, 702, 703, 704, 705, 706},
                 {710, 711, 712, 713, 714, 715, 716},
                 {720, 721, 722, 723, 724, 725, 726},
@@ -97,7 +75,8 @@ board::board(const int& players, bool test)
         state = {centerPoint, ring1, ring2, ring3, ring4, ring5, ring6, ring7};
 
 //</editor-fold>
-    } else{
+    } else
+    {
         //<editor-fold desc="fresh board">
         centerPoint = {{0}};
         ring1 = {
@@ -108,7 +87,7 @@ board::board(const int& players, bool test)
                 {0},
                 {0},
         };
-        ring2={
+        ring2 = {
                 {0, 0},
                 {0, 0},
                 {0, 0},
@@ -116,7 +95,7 @@ board::board(const int& players, bool test)
                 {0, 0},
                 {0, 0},
         };
-        ring3={
+        ring3 = {
                 {0, 0, 0},
                 {0, 0, 0},
                 {0, 0, 0},
@@ -124,7 +103,7 @@ board::board(const int& players, bool test)
                 {0, 0, 0},
                 {0, 0, 0},
         };
-        ring4={
+        ring4 = {
                 {0, 0, 0, 0},
                 {0, 0, 0, 0},
                 {0, 0, 0, 0},
@@ -132,7 +111,7 @@ board::board(const int& players, bool test)
                 {0, 0, 0, 0},
                 {0, 0, 0, 0},
         };
-        ring5={
+        ring5 = {
                 {p, 0, 0, 0, 0},//p
                 {r, 0, 0, 0, 0},//r
                 {g, 0, 0, 0, 0},//g
@@ -140,7 +119,7 @@ board::board(const int& players, bool test)
                 {o, 0, 0, 0, 0},//o
                 {y, 0, 0, 0, 0},//y
         };
-        ring6={
+        ring6 = {
                 {0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0},
@@ -148,7 +127,7 @@ board::board(const int& players, bool test)
                 {0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0},
         };
-        ring7={
+        ring7 = {
                 {0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0},
@@ -162,470 +141,633 @@ board::board(const int& players, bool test)
     }
 }
 
-int board::getPointValue(int ring, int section, int position) {
-	return state[ring][section][position];
-}
-
-
-int board::setPointValue(int ring, int section, int position, int value) {
-	state[ring][section][position] = value;
-	return state[ring][section][position];
-}
-
-std::vector<int> board::getLeft(int ring, int section, int position)
+int board::getPointValue(Coordinate coordinates)
 {
-    if (ring == 0)
+    return state[coordinates.ring][coordinates.section][coordinates.position];
+}
+
+
+int board::setPointValue(Point point)
+{
+    state[point.coordinates.ring][point.coordinates.section][point.coordinates.position] = point.value;
+    return state[point.coordinates.ring][point.coordinates.section][point.coordinates.position];
+}
+
+board::Point board::getLeft(Coordinate coordinates)
+{
+    if (coordinates.ring == 0)
     {
         return {state[1][0][0], 1, 0, 0};
     }
 
 
-    if (section == 0)
+    if (coordinates.section == 0)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][section][position], ring + 1, section, position};
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position], coordinates.ring + 1,
+                coordinates.section, coordinates.position};
 
     }
 
-    if (section == 1)
+    if (coordinates.section == 1)
     {
-        if (position == 0)
+        if (coordinates.position == 0)
         {
-            return {state[ring + 1][section][ring], ring + 1, section, ring};
+            return {state[coordinates.ring + 1][coordinates.section][coordinates.ring], coordinates.ring + 1,
+                    coordinates.section, coordinates.ring};
         } else
         {
-            return {state[ring][section][position - 1], ring, section, position - 1};
+            return {state[coordinates.ring][coordinates.section][coordinates.position - 1], coordinates.ring,
+                    coordinates.section, coordinates.position - 1};
 
         }
     }
 
-    if (section == 2)
+    if (coordinates.section == 2)
     {
-        if (position == 0)
+        if (coordinates.position == 0)
         {
-            return {state[ring][section - 1][ring - 1], ring, section - 1, ring - 1};
+            return {state[coordinates.ring][coordinates.section - 1][coordinates.ring - 1], coordinates.ring,
+                    coordinates.section - 1, coordinates.ring - 1};
         } else
         {
-            return {state[ring - 1][section][position - 1], ring - 1, section, position - 1};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position - 1], coordinates.ring - 1,
+                    coordinates.section, coordinates.position - 1};
 
         }
     }
 
-    if (section == 3)
+    if (coordinates.section == 3)
     {
-        if (position == 0)
+        if (coordinates.position == 0)
         {
-            return {state[ring - 1][section][position], ring - 1, section, position};
-        } else if (position + 1 == ring)
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position], coordinates.ring - 1,
+                    coordinates.section, coordinates.position};
+        } else if (coordinates.position + 1 == coordinates.ring)
         {
-            return {state[ring - 1][section + 1][0], ring - 1, section, position};
+            return {state[coordinates.ring - 1][coordinates.section + 1][0], coordinates.ring - 1, coordinates.section,
+                    coordinates.position};
         } else
         {
-            return {state[ring - 1][section][position - 1], ring - 1, section, position - 1};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position - 1], coordinates.ring - 1,
+                    coordinates.section, coordinates.position - 1};
 
         }
     }
 
-    if (section == 4)
+    if (coordinates.section == 4)
     {
-        if (position + 1 == ring)
+        if (coordinates.position + 1 == coordinates.ring)
         {
-            return {state[ring][section + 1][0], ring, section + 1, 0};
+            return {state[coordinates.ring][coordinates.section + 1][0], coordinates.ring, coordinates.section + 1, 0};
         } else
         {
-            return {state[ring][section][position + 1], ring, section, position + 1};
+            return {state[coordinates.ring][coordinates.section][coordinates.position + 1], coordinates.ring,
+                    coordinates.section, coordinates.position + 1};
         }
     }
 
-    if (section == 5)
+    if (coordinates.section == 5)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][section][position + 1], ring + 1, section, position + 1};
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position + 1], coordinates.ring + 1,
+                coordinates.section, coordinates.position + 1};
 
 
     }
     return {-1, -1, -1, -1};
 }
 
-std::vector<int> board::getTopRight(int ring, int section, int position)
+board::Point board::getTopRight(Coordinate coordinates)
 {
-    if (ring == 0)
+    if (coordinates.ring == 0)
     {
         return {state[1][2][0], 1, 2, 0};
     }
 
 
-    if (section == 0)
+    if (coordinates.section == 0)
     {
-        if (position + 1 == ring)
+        if (coordinates.position + 1 == coordinates.ring)
         {
-            return {state[ring][section + 1][0], ring, section + 1, 0};
+            return {state[coordinates.ring][coordinates.section + 1][0], coordinates.ring, coordinates.section + 1, 0};
         } else
         {
-            return {state[ring][section][position + 1], ring, section, position + 1};
+            return {state[coordinates.ring][coordinates.section][coordinates.position + 1], coordinates.ring,
+                    coordinates.section, coordinates.position + 1};
 
         }
     }
 
-    if (section == 1)
+    if (coordinates.section == 1)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][1][1], ring + 1, 1, 1};
+        return {state[coordinates.ring + 1][1][1], coordinates.ring + 1, 1, 1};
     }
 
-    if (section == 2)
+    if (coordinates.section == 2)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][section][position], ring + 1, section, position};
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position], coordinates.ring + 1,
+                coordinates.section, coordinates.position};
     }
 
-    if (section == 3)
+    if (coordinates.section == 3)
     {
-        if (position == 0)
+        if (coordinates.position == 0)
         {
-            return {state[ring + 1][section - 1][ring], ring + 1, section - 1, ring};
+            return {state[coordinates.ring + 1][coordinates.section - 1][coordinates.ring], coordinates.ring + 1,
+                    coordinates.section - 1, coordinates.ring};
         } else
         {
-            return {state[ring][section][position - 1], ring, section, position - 1};
+            return {state[coordinates.ring][coordinates.section][coordinates.position - 1], coordinates.ring,
+                    coordinates.section, coordinates.position - 1};
         }
     }
 
-    if (section == 4)
+    if (coordinates.section == 4)
     {
-        if (position != 0)
+        if (coordinates.position != 0)
         {
-            return {state[ring - 1][section][position - 1], ring - 1, section, position - 1};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position - 1], coordinates.ring - 1,
+                    coordinates.section, coordinates.position - 1};
         } else
         {
-            return {state[ring][section - 1][ring - 1], ring, section - 1, ring - 1};
+            return {state[coordinates.ring][coordinates.section - 1][coordinates.ring - 1], coordinates.ring,
+                    coordinates.section - 1, coordinates.ring - 1};
         }
     }
 
-    if (section == 5)
+    if (coordinates.section == 5)
     {
-        if (position + 1 == ring)
+        if (coordinates.position + 1 == coordinates.ring)
         {
-            return {state[ring - 1][0][0], ring - 1, 0, 0};
+            return {state[coordinates.ring - 1][0][0], coordinates.ring - 1, 0, 0};
         } else
         {
-            return {state[ring - 1][section][position], ring - 1, section, position};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position], coordinates.ring - 1,
+                    coordinates.section, coordinates.position};
 
         }
     }
     return {-1, -1, -1, -1};
 }
 
-
-std::vector<int> board::getTopLeft(int ring, int section, int position)
+board::Point board::getTopLeft(Coordinate coordinates)
 {
-    if (ring == 0)
+    if (coordinates.ring == 0)
     {
         return {state[1][1][0], 1, 1, 0};
     }
 
 
-    if (section == 0)
+    if (coordinates.section == 0)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][section][position + 1], ring + 1, section, position + 1};
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position + 1], coordinates.ring + 1,
+                coordinates.section, coordinates.position + 1};
     }
 
-    if (section == 1)
+    if (coordinates.section == 1)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][section][position], ring + 1, section, position};
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position], coordinates.ring + 1,
+                coordinates.section, coordinates.position};
     }
 
-    if (section == 2)
+    if (coordinates.section == 2)
     {
-        if (position == 0)
+        if (coordinates.position == 0)
         {
-            return {state[ring + 1][section - 1][ring - 1], ring + 1, section - 1, position - 1};
+            return {state[coordinates.ring + 1][coordinates.section - 1][coordinates.ring - 1], coordinates.ring + 1,
+                    coordinates.section - 1, coordinates.position - 1};
         } else
         {
-            return {state[ring][section][position], ring, section, position};
+            return {state[coordinates.ring][coordinates.section][coordinates.position], coordinates.ring,
+                    coordinates.section, coordinates.position};
         }
     }
 
-    if (section == 3)
+    if (coordinates.section == 3)
     {
-        if (position == 0)
+        if (coordinates.position == 0)
         {
-            return {state[ring][section - 1][ring - 1], ring, section - 1, ring - 1};
+            return {state[coordinates.ring][coordinates.section - 1][coordinates.ring - 1], coordinates.ring,
+                    coordinates.section - 1, coordinates.ring - 1};
         } else
         {
-            return {state[ring - 1][section][position - 1], ring - 1, section, position - 1};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position - 1], coordinates.ring - 1,
+                    coordinates.section, coordinates.position - 1};
         }
     }
 
-    if (section == 4)
+    if (coordinates.section == 4)
     {
-        if (position + 1 == ring)
+        if (coordinates.position + 1 == coordinates.ring)
         {
-            return {state[ring - 1][section + 1][0], ring - 1, section + 1, 0};
+            return {state[coordinates.ring - 1][coordinates.section + 1][0], coordinates.ring - 1,
+                    coordinates.section + 1, 0};
         } else
         {
-            return {state[ring - 1][section][position], ring - 1, section, position};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position], coordinates.ring - 1,
+                    coordinates.section, coordinates.position};
         }
     }
 
-    if (section == 5)
+    if (coordinates.section == 5)
     {
-        if (position + 1 == ring)
+        if (coordinates.position + 1 == coordinates.ring)
         {
-            return {state[ring][0][0], ring, 0, 0};
+            return {state[coordinates.ring][0][0], coordinates.ring, 0, 0};
         } else
         {
-            return {state[ring][section][position + 1], ring, section, position + 1};
+            return {state[coordinates.ring][coordinates.section][coordinates.position + 1], coordinates.ring,
+                    coordinates.section, coordinates.position + 1};
 
         }
     }
     return {-1, -1, -1, -1};
 }
 
-std::vector<int> board::getRight(int ring, int section, int position)
+board::Point board::getRight(Coordinate coordinates)
 {
-    if (ring == 0)
+    if (coordinates.ring == 0)
     {
         return {state[1][3][0], 1, 3, 0};
     }
 
 
-    if (section == 0)
+    if (coordinates.section == 0)
     {
-        if (position == 0 || position + 1 != ring) // dislike the exception i had to put in for ring 1
+        if (coordinates.position == 0 || coordinates.position + 1 !=
+                                         coordinates.ring) // dislike the exception i had to put in for coordinates.ring 1
         {
-            return {state[ring - 1][section][position], ring - 1, section, position};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position], coordinates.ring - 1,
+                    coordinates.section, coordinates.position};
         } else
         {
-            return {state[ring - 1][section + 1][0], ring - 1, section + 1, 0};
+            return {state[coordinates.ring - 1][coordinates.section + 1][0], coordinates.ring - 1,
+                    coordinates.section + 1, 0};
         }
     }
 
-    if (section == 1)
+    if (coordinates.section == 1)
     {
-        if (position + 1 == ring)
+        if (coordinates.position + 1 == coordinates.ring)
         {
-            return {state[ring][section + 1][0], ring, section + 1, 0};
+            return {state[coordinates.ring][coordinates.section + 1][0], coordinates.ring, coordinates.section + 1, 0};
         } else
         {
-            return {state[ring][section][position + 1], ring, section, position + 1};
+            return {state[coordinates.ring][coordinates.section][coordinates.position + 1], coordinates.ring,
+                    coordinates.section, coordinates.position + 1};
 
         }
     }
 
-    if (section == 2)
+    if (coordinates.section == 2)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][section][position + 1], ring + 1, section, position + 1};
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position + 1], coordinates.ring + 1,
+                coordinates.section, coordinates.position + 1};
     }
 
-    if (section == 3)
+    if (coordinates.section == 3)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][section][position], ring + 1, section, position};
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position], coordinates.ring + 1,
+                coordinates.section, coordinates.position};
     }
 
-    if (section == 4)
+    if (coordinates.section == 4)
     {
-        if (position == 0)
+        if (coordinates.position == 0)
         {
-            return {state[ring + 1][section - 1][ring], ring + 1, section - 1, ring};
+            return {state[coordinates.ring + 1][coordinates.section - 1][coordinates.ring], coordinates.ring + 1,
+                    coordinates.section - 1, coordinates.ring};
         } else
         {
-            return {state[ring][section][position - 1], ring, section, position - 1};
+            return {state[coordinates.ring][coordinates.section][coordinates.position - 1], coordinates.ring,
+                    coordinates.section, coordinates.position - 1};
         }
     }
 
-    if (section == 5)
+    if (coordinates.section == 5)
     {
-        if (position == 0)
+        if (coordinates.position == 0)
         {
-            return {state[ring][section - 1][ring - 1], ring, section - 1, ring - 1};
+            return {state[coordinates.ring][coordinates.section - 1][coordinates.ring - 1], coordinates.ring,
+                    coordinates.section - 1, coordinates.ring - 1};
         } else
         {
-            return {state[ring - 1][section][position - 1], ring - 1, section, position - 1};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position - 1], coordinates.ring - 1,
+                    coordinates.section, coordinates.position - 1};
 
         }
     }
     return {-1, -1, -1, -1};
 }
 
-std::vector<int> board::getRightBottom(int ring, int section, int position)
+board::Point board::getRightBottom(Coordinate coordinates)
 {
-    if (ring == 0)
+    if (coordinates.ring == 0)
     {
         return {state[1][4][0], 1, 4, 0};
     }
 
 
-    if (section == 0)
+    if (coordinates.section == 0)
     {
-        if (position == 0) // dislike the exception i had to put in for ring 1
+        if (coordinates.position == 0) // dislike the exception i had to put in for coordinates.ring 1
         {
-            return {state[ring][5][ring - 1], ring, 5, ring - 1};
+            return {state[coordinates.ring][5][coordinates.ring - 1], coordinates.ring, 5, coordinates.ring - 1};
         } else
         {
-            return {state[ring - 1][section][position - 1], ring - 1, section, position - 1};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position - 1], coordinates.ring - 1,
+                    coordinates.section, coordinates.position - 1};
         }
     }
 
-    if (section == 1)
+    if (coordinates.section == 1)
     {
-        if (ring == 1)
+        if (coordinates.ring == 1)
         {
             return {state[0][0][0], 0, 0, 0};
         } else
         {
-            return {state[ring - 1][section][position], ring - 1, section, position};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position], coordinates.ring - 1,
+                    coordinates.section, coordinates.position};
         }
     }
 
-    if (section == 2)
+    if (coordinates.section == 2)
     {
-        if (position + 1 == ring)
+        if (coordinates.position + 1 == coordinates.ring)
         {
-            return {state[ring][section + 1][0], ring, section + 1, 0};
+            return {state[coordinates.ring][coordinates.section + 1][0], coordinates.ring, coordinates.section + 1, 0};
         } else
         {
-            return {state[ring][section][position + 1], ring, section, position + 1};
+            return {state[coordinates.ring][coordinates.section][coordinates.position + 1], coordinates.ring,
+                    coordinates.section, coordinates.position + 1};
 
         }
     }
 
-    if (section == 3)
+    if (coordinates.section == 3)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][section][position + 1], ring + 1, section, position + 1};
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position + 1], coordinates.ring + 1,
+                coordinates.section, coordinates.position + 1};
     }
 
-    if (section == 4)
+    if (coordinates.section == 4)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][section][position], ring + 1, section, position};
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position], coordinates.ring + 1,
+                coordinates.section, coordinates.position};
     }
 
-    if (section == 5)
+    if (coordinates.section == 5)
     {
-        if (position == 0)
+        if (coordinates.position == 0)
         {
-            return {state[ring + 1][section - 1][ring], ring + 1, section - 1, ring};
+            return {state[coordinates.ring + 1][coordinates.section - 1][coordinates.ring], coordinates.ring + 1,
+                    coordinates.section - 1, coordinates.ring};
         } else
         {
-            return {state[ring][section][position - 1], ring, section, position - 1};
+            return {state[coordinates.ring][coordinates.section][coordinates.position - 1], coordinates.ring,
+                    coordinates.section, coordinates.position - 1};
 
         }
     }
     return {-1, -1, -1 - 1};
 }
 
-std::vector<int> board::getLeftBottom(int ring, int section, int position)
+board::Point board::getLeftBottom(Coordinate coordinates)
 {
-    if (ring == 0)
+    if (coordinates.ring == 0)
     {
         return {state[1][5][0], 1, 5, 0};
     }
 
 
-    if (section == 0)
+    if (coordinates.section == 0)
     {
-        if (position == 0)
+        if (coordinates.position == 0)
         {
-            return {state[ring + 1][5][ring], ring + 1, 5, ring};
+            return {state[coordinates.ring + 1][5][coordinates.ring], coordinates.ring + 1, 5, coordinates.ring};
         } else
         {
-            return {state[ring][section][position - 1], ring, section, position - 1};
+            return {state[coordinates.ring][coordinates.section][coordinates.position - 1], coordinates.ring,
+                    coordinates.section, coordinates.position - 1};
         }
     }
 
-    if (section == 1)
+    if (coordinates.section == 1)
     {
-        if (position == 0)
+        if (coordinates.position == 0)
         {
-            return {state[ring][section - 1][ring - 1], ring, section - 1, ring - 1};
+            return {state[coordinates.ring][coordinates.section - 1][coordinates.ring - 1], coordinates.ring,
+                    coordinates.section - 1, coordinates.ring - 1};
         } else
         {
-            return {state[ring - 1][section][position - 1], ring - 1, section, position - 1};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position - 1], coordinates.ring - 1,
+                    coordinates.section, coordinates.position - 1};
 
         }
     }
 
-    if (section == 2)
+    if (coordinates.section == 2)
     {
-        if (position + 1 == ring)
+        if (coordinates.position + 1 == coordinates.ring)
         {
-            return {state[ring - 1][section + 1][0], ring - 1, section + 1, 0};
+            return {state[coordinates.ring - 1][coordinates.section + 1][0], coordinates.ring - 1,
+                    coordinates.section + 1, 0};
         } else
         {
-            return {state[ring - 1][section][position], ring - 1, section, position};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position], coordinates.ring - 1,
+                    coordinates.section, coordinates.position};
         }
     }
 
-    if (section == 3)
+    if (coordinates.section == 3)
     {
-        if (position + 1 == ring)
+        if (coordinates.position + 1 == coordinates.ring)
         {
-            return {state[ring][section + 1][0], ring, section + 1, 0};
+            return {state[coordinates.ring][coordinates.section + 1][0], coordinates.ring, coordinates.section + 1, 0};
 
         } else
         {
-            return {state[ring][section][position + 1], ring, section, position + 1};
+            return {state[coordinates.ring][coordinates.section][coordinates.position + 1], coordinates.ring,
+                    coordinates.section, coordinates.position + 1};
 
         }
 
     }
 
-    if (section == 4)
+    if (coordinates.section == 4)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][section][position + 1], ring + 1, section, position + 1};
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position + 1], coordinates.ring + 1,
+                coordinates.section, coordinates.position + 1};
     }
 
-    if (section == 5)
+    if (coordinates.section == 5)
     {
-        if (ring == 7)
+        if (coordinates.ring == 7)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[ring + 1][section][position], ring + 1, section, position};
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position], coordinates.ring + 1,
+                coordinates.section, coordinates.position};
     }
     return {-1, -1, -1, -1};
 }
 
+Score tileValueToScore(int value)
+{
+    Score score = {0, 0, 0, 0, 0, 0};
+    switch (value)
+    {
+        case 1:
+            score.red12pointedStar = 1;
+            break;
+        case 2:
+            score.greenCircle = 1;
+            break;
+        case 3:
+            score.blue6PointedStar = 1;
+            break;
+        case 4:
+            score.orangeHexagon = 1;
+            break;
+        case 5:
+            score.yellow24PointedStar = 1;
+            break;
+        case 6:
+            score.purpleRing = 1;
+            break;
+    }
+
+    return score;
+
+}
+
+Score board::getScoreForPosition(board::Point tilePoint1)
+{
+    Score score = {0, 0, 0, 0, 0, 0};
+
+    Point leftPoint = getLeft(tilePoint1.coordinates);
+    while (leftPoint.value != -1 && leftPoint.value == tilePoint1.value)
+    {
+        score += tileValueToScore(leftPoint.value);
+        leftPoint = getLeft(leftPoint.coordinates);
+    }
+
+    Point leftUpPoint = getTopLeft(tilePoint1.coordinates);
+    while (leftUpPoint.value != -1 && leftUpPoint.value == tilePoint1.value)
+    {
+        score += tileValueToScore(leftUpPoint.value);
+        leftUpPoint = getTopLeft(leftUpPoint.coordinates);
+    }
+
+    Point RightUpPoint = getTopRight(tilePoint1.coordinates);
+    while (RightUpPoint.value != -1 && RightUpPoint.value == tilePoint1.value)
+    {
+        score += tileValueToScore(RightUpPoint.value);
+        RightUpPoint = getTopRight(RightUpPoint.coordinates);
+    }
+
+    Point rightPoint = getRight(tilePoint1.coordinates);
+    while (rightPoint.value != -1 && rightPoint.value == tilePoint1.value)
+    {
+        score += tileValueToScore(rightPoint.value);
+        rightPoint = getRight(rightPoint.coordinates);
+    }
+
+    Point rightDownPoint = getRightBottom(tilePoint1.coordinates);
+    while (rightDownPoint.value != -1 && rightDownPoint.value == tilePoint1.value)
+    {
+        score += tileValueToScore(rightDownPoint.value);
+        rightDownPoint = getRightBottom(rightDownPoint.coordinates);
+    }
+
+    Point leftDownPoint = getLeftBottom(tilePoint1.coordinates);
+    while (leftDownPoint.value != -1 && leftDownPoint.value == tilePoint1.value)
+    {
+        score += tileValueToScore(leftDownPoint.value);
+        leftDownPoint = getLeftBottom(leftDownPoint.coordinates);
+    }
+
+
+    return score;
+
+
+}
+
+Score board::placeTile(board::Point tilePoint1, board::Point tilePoint2)
+{
+    if (getPointValue(tilePoint1.coordinates) != 0 ||
+        getPointValue(tilePoint2.coordinates) != 0)
+    { //invalid move
+        return {-1, -1, -1, -1, -1, -1};
+    }
+
+    Score score = {0, 0, 0, 0, 0, 0};
+
+
+    score += getScoreForPosition(tilePoint1);
+    score += getScoreForPosition(tilePoint2);
 
 
 
+    // add tile to board
+    setPointValue(tilePoint1);
+    setPointValue(tilePoint2);
 
+    return score;
+}
+
+
+void operator+=(Score &lhs, const Score &rhs)
+{
+    lhs.red12pointedStar += rhs.red12pointedStar;
+    lhs.greenCircle += rhs.greenCircle;
+    lhs.blue6PointedStar += rhs.blue6PointedStar;
+    lhs.orangeHexagon += rhs.orangeHexagon;
+    lhs.yellow24PointedStar += rhs.yellow24PointedStar;
+    lhs.purpleRing += rhs.purpleRing;
+//    return lhs;
+}

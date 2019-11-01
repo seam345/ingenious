@@ -91,9 +91,6 @@
 		<Unit filename="/home/sean/PrimaryWD/Laptop/tinkering/ingenious3/main.cpp">
 			<Option target="ingenious3"/>
 		</Unit>
-		<Unit filename="/home/sean/PrimaryWD/Laptop/tinkering/ingenious3/main.h">
-			<Option target="ingenious3"/>
-		</Unit>
 		<Unit filename="/home/sean/PrimaryWD/Laptop/tinkering/ingenious3/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

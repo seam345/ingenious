@@ -6,5 +6,4 @@ CMakeFiles/ingenious3.dir/board_file.cpp.o: ../board_file.h
 
 CMakeFiles/ingenious3.dir/main.cpp.o: ../board_file.h
 CMakeFiles/ingenious3.dir/main.cpp.o: ../main.cpp
-CMakeFiles/ingenious3.dir/main.cpp.o: ../main.h
 
