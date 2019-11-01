@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sean/PrimaryWD/Laptop/tinkering/ingenious3/board_file.h
+array
+-
+vector
+-
+memory
+-
+
+/home/sean/PrimaryWD/Laptop/tinkering/ingenious3/main.cpp
+iostream
+-
+main.h
+/home/sean/PrimaryWD/Laptop/tinkering/ingenious3/main.h
+board_file.h
+/home/sean/PrimaryWD/Laptop/tinkering/ingenious3/board_file.h
+
+/home/sean/PrimaryWD/Laptop/tinkering/ingenious3/main.h
+
