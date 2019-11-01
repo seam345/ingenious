@@ -13,9 +13,9 @@ using namespace std;
 class board
 {
 public:
-    board(const int& players);
+    board(const int& players, bool test = false);
 
-    board(const int& players, bool test);
+	void doStuff(const int& players);
 
     int getPointValue(int ring, int section, int position);
 

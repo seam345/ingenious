@@ -1,8 +1,6 @@
 #include <iostream>
 #include "main.h"
 #include "board_file.h"
-//#include "board_file.cpp"
-
 
 int main() {
     test();
@@ -30,9 +28,6 @@ int main() {
 
     board gameBoard(2);
     board gsameBoard(3, false);
-
-
-//    return 0;
 }
 
 void dumpState()
