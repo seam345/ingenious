@@ -29,10 +29,12 @@ int main() {
 //    printf("6(%d, %d)", hand[5][0], hand[5][1]);
 
     board gameBoard(2);
-    board gsameBoard(3, false);
 
 
-//    return 0;
+
+
+
+    return 0;
 }
 
 void dumpState()
