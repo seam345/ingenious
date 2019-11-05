@@ -5,10 +5,6 @@
 #include "board_file.h"
 #include <vector>
 
-using namespace std;
-
-
-
 
 board::board(const int &players, bool test)
 {
@@ -119,22 +115,48 @@ board::board(const int &players, bool test)
                 {o, 0, 0, 0, 0},//o
                 {y, 0, 0, 0, 0},//y
         };
-        ring6 = {
-                {0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0},
-        };
-        ring7 = {
-                {0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0},
-        };
+        if (players < 3)
+        {
+            ring6 = {
+                    {-1, -1, -1, -1, -1, -1},
+                    {-1, -1, -1, -1, -1, -1},
+                    {-1, -1, -1, -1, -1, -1},
+                    {-1, -1, -1, -1, -1, -1},
+                    {-1, -1, -1, -1, -1, -1},
+                    {-1, -1, -1, -1, -1, -1},
+            };
+        } else
+        {
+            ring6 = {
+                    {0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0},
+            };
+        }
+        if (players < 4)
+        {
+            ring7 = {
+                    {-1, -1, -1, -1, -1, -1, -1},
+                    {-1, -1, -1, -1, -1, -1, -1},
+                    {-1, -1, -1, -1, -1, -1, -1},
+                    {-1, -1, -1, -1, -1, -1, -1},
+                    {-1, -1, -1, -1, -1, -1, -1},
+                    {-1, -1, -1, -1, -1, -1, -1},
+            };
+        } else
+        {
+            ring7 = {
+                    {0, 0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0, 0},
+            };
+        }
         state = {centerPoint, ring1, ring2, ring3, ring4, ring5, ring6, ring7};
 
 //</editor-fold>
@@ -176,6 +198,10 @@ board::Point board::getLeft(Coordinate coordinates)
     {
         if (coordinates.position == 0)
         {
+            if (coordinates.ring == 7)
+            {
+                return {-1, -1, -1, -1};
+            }
             return {state[coordinates.ring + 1][coordinates.section][coordinates.ring], coordinates.ring + 1,
                     coordinates.section, coordinates.ring};
         } else
@@ -202,6 +228,10 @@ board::Point board::getLeft(Coordinate coordinates)
 
     if (coordinates.section == 3)
     {
+        if (coordinates.ring == 1)
+        {
+            return {state[0][0][0], 0, 0, 0};
+        }
         if (coordinates.position == 0)
         {
             return {state[coordinates.ring - 1][coordinates.section][coordinates.position], coordinates.ring - 1,
@@ -212,8 +242,8 @@ board::Point board::getLeft(Coordinate coordinates)
                     coordinates.position};
         } else
         {
-            return {state[coordinates.ring - 1][coordinates.section][coordinates.position - 1], coordinates.ring - 1,
-                    coordinates.section, coordinates.position - 1};
+            return {state[coordinates.ring - 1][coordinates.section][coordinates.position], coordinates.ring - 1,
+                    coordinates.section, coordinates.position};
 
         }
     }
@@ -271,7 +301,8 @@ board::Point board::getTopRight(Coordinate coordinates)
         {
             return {-1, -1, -1, -1};
         }
-        return {state[coordinates.ring + 1][1][1], coordinates.ring + 1, 1, 1};
+
+        return {state[coordinates.ring + 1][coordinates.section][coordinates.position+1], coordinates.ring + 1, coordinates.section, coordinates.position+1};
     }
 
     if (coordinates.section == 2)
@@ -288,6 +319,10 @@ board::Point board::getTopRight(Coordinate coordinates)
     {
         if (coordinates.position == 0)
         {
+            if (coordinates.ring == 7)
+            {
+                return {-1, -1, -1, -1};
+            }
             return {state[coordinates.ring + 1][coordinates.section - 1][coordinates.ring], coordinates.ring + 1,
                     coordinates.section - 1, coordinates.ring};
         } else
@@ -357,12 +392,16 @@ board::Point board::getTopLeft(Coordinate coordinates)
     {
         if (coordinates.position == 0)
         {
+            if (coordinates.ring == 7)
+            {
+                return {-1, -1, -1, -1};
+            }
             return {state[coordinates.ring + 1][coordinates.section - 1][coordinates.ring - 1], coordinates.ring + 1,
-                    coordinates.section - 1, coordinates.position - 1};
+                    coordinates.section - 1, coordinates.ring - 1};
         } else
         {
-            return {state[coordinates.ring][coordinates.section][coordinates.position], coordinates.ring,
-                    coordinates.section, coordinates.position};
+            return {state[coordinates.ring][coordinates.section][coordinates.position - 1], coordinates.ring,
+                    coordinates.section, coordinates.position - 1};
         }
     }
 
@@ -381,6 +420,10 @@ board::Point board::getTopLeft(Coordinate coordinates)
 
     if (coordinates.section == 4)
     {
+        if (coordinates.ring == 1)
+        {
+            return {state[0][0][0], 0, 0, 0};
+        }
         if (coordinates.position + 1 == coordinates.ring)
         {
             return {state[coordinates.ring - 1][coordinates.section + 1][0], coordinates.ring - 1,
@@ -466,6 +509,10 @@ board::Point board::getRight(Coordinate coordinates)
     {
         if (coordinates.position == 0)
         {
+            if (coordinates.ring == 7)
+            {
+                return {-1, -1, -1, -1};
+            }
             return {state[coordinates.ring + 1][coordinates.section - 1][coordinates.ring], coordinates.ring + 1,
                     coordinates.section - 1, coordinates.ring};
         } else
@@ -516,6 +563,10 @@ board::Point board::getRightBottom(Coordinate coordinates)
         if (coordinates.ring == 1)
         {
             return {state[0][0][0], 0, 0, 0};
+        } else if (coordinates.position +1 == coordinates.ring)
+        {
+            return {state[coordinates.ring - 1][coordinates.section + 1 ][0], coordinates.ring - 1,
+                    coordinates.section + 1, 0};
         } else
         {
             return {state[coordinates.ring - 1][coordinates.section][coordinates.position], coordinates.ring - 1,
@@ -560,6 +611,10 @@ board::Point board::getRightBottom(Coordinate coordinates)
     {
         if (coordinates.position == 0)
         {
+            if (coordinates.ring == 7)
+            {
+                return {-1, -1, -1, -1};
+            }
             return {state[coordinates.ring + 1][coordinates.section - 1][coordinates.ring], coordinates.ring + 1,
                     coordinates.section - 1, coordinates.ring};
         } else
@@ -582,6 +637,10 @@ board::Point board::getLeftBottom(Coordinate coordinates)
 
     if (coordinates.section == 0)
     {
+        if (coordinates.ring == 7)
+        {
+            return {-1, -1, -1, -1};
+        }
         if (coordinates.position == 0)
         {
             return {state[coordinates.ring + 1][5][coordinates.ring], coordinates.ring + 1, 5, coordinates.ring};
@@ -608,6 +667,10 @@ board::Point board::getLeftBottom(Coordinate coordinates)
 
     if (coordinates.section == 2)
     {
+        if (coordinates.ring == 1)
+        {
+            return {state[0][0][0], 0, 0, 0};
+        }
         if (coordinates.position + 1 == coordinates.ring)
         {
             return {state[coordinates.ring - 1][coordinates.section + 1][0], coordinates.ring - 1,
@@ -760,14 +823,85 @@ Score board::placeTile(board::Point tilePoint1, board::Point tilePoint2)
     return score;
 }
 
+Score board::checkTile(board::Point tilePoint1, board::Point tilePoint2)
+{
+    if (getPointValue(tilePoint1.coordinates) != 0 ||
+        getPointValue(tilePoint2.coordinates) != 0)
+    { //invalid move
+        return {-1, -1, -1, -1, -1, -1};
+    }
 
+    Score score = {0, 0, 0, 0, 0, 0};
+
+
+    score += getScoreForPosition(tilePoint1);
+    score += getScoreForPosition(tilePoint2);
+
+
+    return score;
+}
+
+// todo add limit
 void operator+=(Score &lhs, const Score &rhs)
 {
     lhs.red12pointedStar += rhs.red12pointedStar;
+    if (lhs.red12pointedStar > 18) lhs.red12pointedStar = 18;
     lhs.greenCircle += rhs.greenCircle;
+    if (lhs.greenCircle > 18) lhs.greenCircle = 18;
     lhs.blue6PointedStar += rhs.blue6PointedStar;
+    if (lhs.blue6PointedStar > 18) lhs.blue6PointedStar = 18;
     lhs.orangeHexagon += rhs.orangeHexagon;
+    if (lhs.orangeHexagon > 18) lhs.orangeHexagon = 18;
     lhs.yellow24PointedStar += rhs.yellow24PointedStar;
+    if (lhs.yellow24PointedStar > 18) lhs.yellow24PointedStar = 18;
     lhs.purpleRing += rhs.purpleRing;
-//    return lhs;
+    if (lhs.purpleRing > 18) lhs.purpleRing = 18;
+
+}
+
+
+bool operator>(const Score &lhs, const Score &rhs)
+{
+    int maxScore = 18;
+    int rhScore = 0;
+    rhScore += maxScore - rhs.purpleRing;
+    rhScore += maxScore - rhs.yellow24PointedStar;
+    rhScore += maxScore - rhs.red12pointedStar;
+    rhScore += maxScore - rhs.blue6PointedStar;
+    rhScore += maxScore - rhs.greenCircle;
+    rhScore += maxScore - rhs.orangeHexagon;
+    int lhScore = 0;
+    lhScore += maxScore - lhs.purpleRing;
+    lhScore += maxScore - lhs.yellow24PointedStar;
+    lhScore += maxScore - lhs.red12pointedStar;
+    lhScore += maxScore - lhs.blue6PointedStar;
+    lhScore += maxScore - lhs.greenCircle;
+    lhScore += maxScore - lhs.orangeHexagon;
+
+    // operator reversed because lower score is better
+    return lhScore < rhScore;
+}
+
+bool operator<(const Score &lhs, const Score &rhs)
+{
+    return rhs > lhs;
+}
+
+Score operator+(const Score &lhs, const Score &rhs)
+{
+    Score result = {0, 0, 0, 0, 0, 0};
+    result.red12pointedStar = lhs.red12pointedStar + rhs.red12pointedStar;
+    if (result.red12pointedStar > 18) result.red12pointedStar = 18;
+    result.greenCircle = lhs.greenCircle + rhs.greenCircle;
+    if (result.greenCircle > 18) result.greenCircle = 18;
+    result.blue6PointedStar = lhs.blue6PointedStar + rhs.blue6PointedStar;
+    if (result.blue6PointedStar > 18) result.blue6PointedStar = 18;
+    result.orangeHexagon = lhs.orangeHexagon + rhs.orangeHexagon;
+    if (result.orangeHexagon > 18) result.orangeHexagon = 18;
+    result.yellow24PointedStar = lhs.yellow24PointedStar + rhs.yellow24PointedStar;
+    if (result.yellow24PointedStar > 18) result.yellow24PointedStar = 18;
+    result.purpleRing = lhs.purpleRing + rhs.purpleRing;
+    if (result.purpleRing > 18) result.purpleRing = 18;
+
+    return result;
 }

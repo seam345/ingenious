@@ -1,0 +1,550 @@
+/home/sean/tinkering/ingenious3/cmake-build-debug/ingenious3
+Enter number of players: 
+2
+Add hand
+first tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple
+2 3
+second tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple
+1 6
+3rd tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple
+1 6
+4th tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple
+5 2
+5th tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple
+2 4
+6th tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple
+2 2
+continue 1=yes 0=no : 
+1
+put tile (2,2) ring: 4 section: 2 position: 0 ring: 5 section: 2 position: 1
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 1 4
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+1 4 1 0
+1 5 1 1
+
+player1 score is: 
+red12pointedStar: 0
+greenCircle: 2
+blue6PointedStar: 0
+orangeHexagon: 0
+yellow24PointedStar: 0
+purpleRing: 0
+
+
+player2 score is: 
+red12pointedStar: 2
+greenCircle: 0
+blue6PointedStar: 0
+orangeHexagon: 0
+yellow24PointedStar: 0
+purpleRing: 0
+
+continue 1=yes 0=no : 
+1
+put tile (5,2) ring: 2 section: 2 position: 0 ring: 3 section: 2 position: 0
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 6 2
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+4 4 1 1
+1 5 1 2
+
+player1 score is: 
+red12pointedStar: 0
+greenCircle: 4
+blue6PointedStar: 0
+orangeHexagon: 0
+yellow24PointedStar: 0
+purpleRing: 0
+
+
+player2 score is: 
+red12pointedStar: 4
+greenCircle: 0
+blue6PointedStar: 0
+orangeHexagon: 0
+yellow24PointedStar: 0
+purpleRing: 0
+
+continue 1=yes 0=no : 
+1
+put tile (2,4) ring: 4 section: 1 position: 3 ring: 4 section: 1 position: 2
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 5 5
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+1 5 1 3
+2 4 1 2
+
+player1 score is: 
+red12pointedStar: 0
+greenCircle: 7
+blue6PointedStar: 0
+orangeHexagon: 1
+yellow24PointedStar: 0
+purpleRing: 0
+
+
+player2 score is: 
+red12pointedStar: 3
+greenCircle: -1
+blue6PointedStar: -1
+orangeHexagon: -1
+yellow24PointedStar: -1
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (1,4) ring: 3 section: 1 position: 0 ring: 3 section: 1 position: 1
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 5 2
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+5 1 2 0
+4 2 1 1
+
+player1 score is: 
+red12pointedStar: 2
+greenCircle: 7
+blue6PointedStar: 0
+orangeHexagon: 3
+yellow24PointedStar: 0
+purpleRing: 0
+
+
+player2 score is: 
+red12pointedStar: 3
+greenCircle: -1
+blue6PointedStar: -1
+orangeHexagon: 1
+yellow24PointedStar: 0
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (5,2) ring: 3 section: 2 position: 1 ring: 4 section: 2 position: 1
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 2 6
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+2 5 2 2
+5 4 2 2
+
+player1 score is: 
+red12pointedStar: 2
+greenCircle: 10
+blue6PointedStar: 0
+orangeHexagon: 3
+yellow24PointedStar: 1
+purpleRing: 0
+
+
+player2 score is: 
+red12pointedStar: 3
+greenCircle: 3
+blue6PointedStar: -1
+orangeHexagon: 1
+yellow24PointedStar: 2
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (5,5) ring: 2 section: 2 position: 1 ring: 3 section: 2 position: 2
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 1 5
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+4 2 1 0
+5 1 1 0
+
+player1 score is: 
+red12pointedStar: 2
+greenCircle: 10
+blue6PointedStar: 0
+orangeHexagon: 3
+yellow24PointedStar: 6
+purpleRing: 0
+
+
+player2 score is: 
+red12pointedStar: 3
+greenCircle: 3
+blue6PointedStar: -1
+orangeHexagon: 4
+yellow24PointedStar: 5
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (1,5) ring: 3 section: 0 position: 2 ring: 2 section: 0 position: 1
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 2 1
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+5 5 2 3
+5 4 2 3
+
+
+player1 score is: 
+red12pointedStar: 3
+greenCircle: 10
+blue6PointedStar: 0
+orangeHexagon: 3
+yellow24PointedStar: 10
+purpleRing: 0
+
+
+player2 score is: 
+red12pointedStar: 3
+greenCircle: 3
+blue6PointedStar: -1
+orangeHexagon: 4
+yellow24PointedStar: 13
+purpleRing: -1
+
+continue 1=yes 0=no : 
+13
+put tile (2,1) ring: 5 section: 1 position: 4 ring: 5 section: 1 position: 3
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 3 5
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+1 5 0 4
+1 4 0 3
+
+player1 score is: 
+red12pointedStar: 6
+greenCircle: 14
+blue6PointedStar: 0
+orangeHexagon: 3
+yellow24PointedStar: 10
+purpleRing: 0
+
+
+player2 score is: 
+red12pointedStar: 9
+greenCircle: 3
+blue6PointedStar: -1
+orangeHexagon: 4
+yellow24PointedStar: 13
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (3,5) ring: 4 section: 3 position: 0 ring: 5 section: 2 position: 4
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 5 1
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+3 3 0 1
+1 4 0 2
+
+player1 score is: 
+red12pointedStar: 6
+greenCircle: 14
+blue6PointedStar: 1
+orangeHexagon: 3
+yellow24PointedStar: 16
+purpleRing: 0
+
+
+player2 score is: 
+red12pointedStar: 13
+greenCircle: 3
+blue6PointedStar: -1
+orangeHexagon: 4
+yellow24PointedStar: 13
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (1,6) ring: 4 section: 0 position: 1 ring: 5 section: 0 position: 1
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 6 6
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+3 3 0 0
+1 4 0 0
+
+player1 score is: 
+red12pointedStar: 10
+greenCircle: 14
+blue6PointedStar: 1
+orangeHexagon: 3
+yellow24PointedStar: 16
+purpleRing: 1
+
+
+player2 score is: 
+red12pointedStar: 18
+greenCircle: 3
+blue6PointedStar: 0
+orangeHexagon: 4
+yellow24PointedStar: 13
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (1,6) ring: 5 section: 0 position: 3 ring: 5 section: 0 position: 2
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 4 1
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+3 2 0 0 
+3 3 5 2
+
+player1 score is: 
+red12pointedStar: 15
+greenCircle: 14
+blue6PointedStar: 1
+orangeHexagon: 3
+yellow24PointedStar: 16
+purpleRing: 3
+
+
+player2 score is: 
+red12pointedStar: 18
+greenCircle: 3
+blue6PointedStar: 3
+orangeHexagon: 4
+yellow24PointedStar: 13
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (2,3) ring: 1 section: 0 position: 0 ring: 2 section: 5 position: 1
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 2 2
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+2 0 0 0
+3 1 5 0
+
+player1 score is: 
+red12pointedStar: 15
+greenCircle: 14
+blue6PointedStar: 4
+orangeHexagon: 3
+yellow24PointedStar: 16
+purpleRing: 3
+
+
+player2 score is: 
+red12pointedStar: 18
+greenCircle: 4
+blue6PointedStar: 5
+orangeHexagon: 4
+yellow24PointedStar: 13
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (2,2) ring: 1 section: 3 position: 0 ring: 1 section: 4 position: 0
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 2 6 
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+3 2 5 0
+3 3 5 1
+
+player1 score is: 
+red12pointedStar: 15
+greenCircle: 17
+blue6PointedStar: 4
+orangeHexagon: 3
+yellow24PointedStar: 16
+purpleRing: 3
+
+
+player2 score is: 
+red12pointedStar: 18
+greenCircle: 4
+blue6PointedStar: 12
+orangeHexagon: 4
+yellow24PointedStar: 13
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (4,1) ring: 4 section: 5 position: 3 ring: 5 section: 5 position: 4
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 3 3
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+3 3 5 0
+1 3 4 3
+
+player1 score is: 
+red12pointedStar: 18
+greenCircle: 17
+blue6PointedStar: 4
+orangeHexagon: 3
+yellow24PointedStar: 16
+purpleRing: 3
+
+
+player2 score is: 
+red12pointedStar: 18
+greenCircle: 4
+blue6PointedStar: 17
+orangeHexagon: 4
+yellow24PointedStar: 13
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (3,3) ring: 3 section: 4 position: 2 ring: 4 section: 4 position: 3
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 4 4
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+1 2 3 1
+2 2 3 0
+
+player1 score is: 
+red12pointedStar: 18
+greenCircle: 17
+blue6PointedStar: 13
+orangeHexagon: 3
+yellow24PointedStar: 16
+purpleRing: 3
+
+
+player2 score is: 
+red12pointedStar: 18
+greenCircle: 7
+blue6PointedStar: 17
+orangeHexagon: 4
+yellow24PointedStar: 13
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (5,1) ring: 3 section: 3 position: 0 ring: 4 section: 3 position: 1
+player has ingenioused playing again!!
+put tile (4,4) ring: 4 section: 4 position: 0 ring: 5 section: 3 position: 4
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 3 6
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 4 6 
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+4 5 4 1
+6 4 4 1
+
+player1 score is: 
+red12pointedStar: 18
+greenCircle: 17
+blue6PointedStar: 13
+orangeHexagon: 5
+yellow24PointedStar: 18
+purpleRing: 3
+
+
+player2 score is: 
+red12pointedStar: 18
+greenCircle: 7
+blue6PointedStar: 17
+orangeHexagon: 6
+yellow24PointedStar: 13
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1
+put tile (3,6) ring: 2 section: 4 position: 1 ring: 3 section: 4 position: 1
+player has ingenioused playing again!!
+put tile (4,6) ring: 5 section: 4 position: 2 ring: 4 section: 4 position: 2
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 5 4
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 2 6
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+4 5 4 3
+6 4 4 3
+
+player1 score is: 
+red12pointedStar: 18
+greenCircle: 17
+blue6PointedStar: 18
+orangeHexagon: 7
+yellow24PointedStar: 18
+purpleRing: 6
+
+
+player2 score is: 
+red12pointedStar: 17
+greenCircle: 6
+blue6PointedStar: 16
+orangeHexagon: 5
+yellow24PointedStar: 12
+purpleRing: -2
+
+continue 1=yes 0=no : 
+1
+put tile (6,6) ring: 2 section: 4 position: 0 ring: 3 section: 4 position: 0
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 6 5
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+4 5 4 4
+3 4 5 0
+player has ingenioused playing again!!
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+6 3 3 2 
+1 4 3 2
+
+player1 score is: 
+red12pointedStar: 18
+greenCircle: 17
+blue6PointedStar: 18
+orangeHexagon: 7
+yellow24PointedStar: 18
+purpleRing: 10
+
+
+player2 score is: 
+red12pointedStar: 18
+greenCircle: 6
+blue6PointedStar: 18
+orangeHexagon: 5
+yellow24PointedStar: 12
+purpleRing: 1
+
+continue 1=yes 0=no : 
+1
+put tile (5,4) ring: 5 section: 3 position: 3 ring: 4 section: 3 position: 3
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 3 3
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+1 5 5 3
+4 3 5 2
+
+player1 score is: 
+red12pointedStar: 18
+greenCircle: 17
+blue6PointedStar: 18
+orangeHexagon: 10
+yellow24PointedStar: 18
+purpleRing: 10
+
+
+player2 score is: 
+red12pointedStar: 17
+greenCircle: 5
+blue6PointedStar: 17
+orangeHexagon: 4
+yellow24PointedStar: 11
+purpleRing: 0
+
+continue 1=yes 0=no : 
+1
+put tile (2,6) ring: 4 section: 5 position: 1 ring: 5 section: 5 position: 2
+Please enter a new tile (1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple): 3 4
+Please enter player 2's move (tile colour 1, ring, section, position, tile colour 2, ring, section, position)
+(1=red, 2=green, 3=blue, 4=orange, 5=yellow, 6=purple):
+4 4 3 1
+2 5 3 2
+
+player1 score is: 
+red12pointedStar: 18
+greenCircle: 17
+blue6PointedStar: 18
+orangeHexagon: 10
+yellow24PointedStar: 18
+purpleRing: 10
+
+
+player2 score is: 
+red12pointedStar: 16
+greenCircle: 4
+blue6PointedStar: 16
+orangeHexagon: 3
+yellow24PointedStar: 10
+purpleRing: -1
+
+continue 1=yes 0=no : 
+1

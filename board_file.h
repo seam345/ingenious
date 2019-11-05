@@ -18,6 +18,11 @@ struct Score {
 };
 
 void operator+=(Score& lhs, const Score& rhs );
+Score operator+(const Score& lhs, const Score& rhs );
+bool operator< (const Score& lhs, const Score& rhs);
+bool operator> (const Score& lhs, const Score& rhs);
+
+
 
 //Score& operator+=(const Score& rhs);
 
@@ -49,12 +54,20 @@ class board
 {
 public:
 //    board(const int& players);
-    struct Coordinate {int ring; int section; int position;};
-    struct Point {int value; Coordinate coordinates;};
+    struct Coordinate
+    {
+        int ring;
+        int section;
+        int position;
+    };
+    struct Point
+    {
+        int value;
+        Coordinate coordinates;
+    };
 
 
-
-    board(const int& players, bool test= false);
+    board(const int &players, bool test = false);
 
     int getPointValue(Coordinate coordinates);
 
@@ -74,6 +87,10 @@ public:
 
     Score placeTile(Point tilePoint1, Point tilePoint2);
 
+    Score checkTile(Point tilePoint1, Point tilePoint2);
+
+    Score getScoreForPosition(board::Point tilePoint1);
+
 private:
     std::vector<std::vector<int>> centerPoint;
     std::vector<std::vector<int>> ring1;
@@ -85,8 +102,4 @@ private:
     std::vector<std::vector<int>> ring7;
     std::vector<std::vector<std::vector<int>>> state;
 
-
-    Score getScoreForPosition(Point tilePoint1);
 };
-
-
